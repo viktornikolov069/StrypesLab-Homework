@@ -1,2 +1,2 @@
 # StrypesLab-Homework
-This repository contains homework forthe StrypesLab C language course.
+This repository contains homework for the StrypesLab C language course.
