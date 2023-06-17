@@ -15,7 +15,7 @@ int main() {
             "Inserted value is not in the allowed range!");
 
     //The symbols {'[', '\', ']', '^', '_', '`'}, six in count, occupy the gap 
-    //bethween the upper and lower case section of the alphabet in the ASKII table.
+    //between the upper and lower case section of the alphabet in the ASKII table.
     //Subtracting the gap and alphabet count from the value of the lower case letter 
     //gives us the desired result.
 
