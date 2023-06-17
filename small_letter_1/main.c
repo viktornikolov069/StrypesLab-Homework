@@ -20,4 +20,5 @@ int main() {
     //gives us the desired result.
 
     printf("Capital letter is \n%c\n", letter-(ALPHABET_COUNT+GAP));
+    return 0;
 }
