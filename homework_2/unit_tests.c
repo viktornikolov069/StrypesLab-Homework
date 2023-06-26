@@ -1,6 +1,18 @@
 #include <stdio.h>
+#include <assert.h>
 #include "set_64.h"
 
+
+int totalTests = 0;
+int testsPassed = 0;
+int testsFailed = 0;
+
+void runTest(void (*testFunc)(), const char* testName) {
+    totalTests++;
+
+    printf("Running test: %s\n", testName);
+    (*testFunc)();
+}
 
 int main() {
     uint64_t setA = 251;
