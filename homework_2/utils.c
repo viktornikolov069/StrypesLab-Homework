@@ -9,7 +9,8 @@ void printBits(uint64_t set) {
     }
 }
 
-void printOperation(uint64_t setA, uint64_t setB, char operation) {
+void printOperation(uint64_t setA, uint64_t setB, char operation, const char* name) {
+    printf("\n%s\n", name);
     printBits(setA);
     printf(" -> A\n%c\n", operation);
     printBits(setB);

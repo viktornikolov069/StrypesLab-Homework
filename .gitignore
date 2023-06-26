@@ -17,6 +17,7 @@
 *.pyc
 *.tmp
 *.a
+*.vscode/
 
 .deps
 .libs
