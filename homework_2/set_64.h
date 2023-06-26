@@ -1,5 +1,5 @@
-#ifndef SET_OF_64_H
-#define SET_OF_64_H
+#ifndef SET_64_H
+#define SET_64_H
 
 #include <stdint.h>
 #include <stdbool.h>
@@ -23,4 +23,5 @@ uint64_t Difference(uint64_t setA, uint64_t setB);
 
 char numElements(uint64_t set);
 
-#endif // SET_OF_64_H
+#endif // SET_64_H
+

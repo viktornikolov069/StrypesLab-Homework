@@ -9,6 +9,22 @@ void printBits(uint64_t set) {
     }
 }
 
-void printOperation(char operation) {
-    
+void printOperation(uint64_t setA, uint64_t setB, char operation) {
+    printBits(setA);
+    printf(" -> A\n%c\n", operation);
+    printBits(setB);
+    printf(" -> B\n=\n");
+    switch (operation) {
+    case '^':
+        printBits(setA ^ setB);
+        break;
+    case '&':
+        printBits(setA & setB);
+        break;
+    case '|':
+        printBits(setA | setB);
+        break;
+    default:
+        break;
+    }
 }

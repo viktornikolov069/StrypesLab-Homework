@@ -1,15 +1,18 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "set_of_64.h"
+#include "set_64.h"
 #include "utils.h"
 
+
+/**
+ * Checks if the set is empty using double not.
+ *
+ * @param set The set that we do operations on. Expected values are in the range [0, 2^64-1]
+ * @return Return value is either 1 or 0 depending on if the set is empty or not..
+*/
 bool isEmpty(uint64_t set) {
     return !!(set) ? false : true;
-}
-
-uint64_t Union(uint64_t setA, uint64_t setB) {
-    return (uint64_t)(setA | setB);
 }
 
 uint64_t Add(uint64_t set, char index) {
@@ -26,22 +29,6 @@ uint64_t Add(uint64_t set, char index) {
     return result;
 }
 
-uint64_t Intersect(uint64_t setA, uint64_t setB) {
-    return (uint64_t)(setA & setB);
-}
-
-uint64_t Difference(uint64_t setA, uint64_t setB) {
-    printBits(setB);
-    printf(" -> B");
-    printf("\n&\n");
-    printBits(setA);
-    printf(" -> A");
-    printf("\n=\n");
-    printBits(setA ^ setB);
-    //printf("\nIs the intersect the same as setB -> %d\n", !(~(intersect) & setB));
-    return (uint64_t)(setA ^ setB);
-}
-
 uint64_t Remove(uint64_t set, char index) {
     uint64_t result = !!(Intersect(set, 1UL << index)) ? Difference(set, 1UL << index) : set;
     if (!!(result & ~set)) {
@@ -52,15 +39,8 @@ uint64_t Remove(uint64_t set, char index) {
     return result;
 }
 
-char numElements(uint64_t set) {
-    char count = 0;
-    while (!!(set)) {
-        if (set & 1UL) {  // Check the least significant bit
-            count++;
-        }
-        set >>= 1UL;  // Shift the bits to the right by 1 position
-    }
-    return count;
+bool isFull(uint64_t set) {
+    return ~(~0UL & set) ? false : true;
 }
 
 //Returns 1 if setB is a subset of setA
@@ -87,17 +67,34 @@ bool isSubset(uint64_t setA, uint64_t setB) {
     return !(~(intersect) & setB) ? true : false;
 }
 
-// int main() {
-//     uint64_t setA = 251;
-//     uint64_t setB = 217;
-//     // printf("\nresult -> %d\n", isSubset(setA, setB));
-//     // printf("\nDifference is %ld", Difference(setA, setB));
-//     // printf("")
-//     printf("\n217 - 8 = %ld\n", Remove(setB, 2));
+uint64_t Union(uint64_t setA, uint64_t setB) {
+    return (uint64_t)(setA | setB);
+}
 
+uint64_t Intersect(uint64_t setA, uint64_t setB) {
+    return (uint64_t)(setA & setB);
+}
 
-//     // for (uint8_t i = 0; i < 64; ++i) {
+uint64_t Difference(uint64_t setA, uint64_t setB) {
+    // printBits(setB);
+    // printf(" -> B");
+    // printf("\n&\n");
+    // printBits(setA);
+    // printf(" -> A");
+    // printf("\n=\n");
+    // printBits(setA ^ setB);
+    //printf("\nIs the intersect the same as setB -> %d\n", !(~(intersect) & setB));
+    printOperation(setA, setB, '^');
+    return (uint64_t)(setA ^ setB);
+}
 
-//     // }
-    
-// } 
+char numElements(uint64_t set) {
+    char count = 0;
+    while (!!(set)) {
+        if (set & 1UL) {  // Check the least significant bit
+            count++;
+        }
+        set >>= 1UL;  // Shift the bits to the right by 1 position
+    }
+    return count;
+}

@@ -5,6 +5,6 @@
 
 void printBits(uint64_t set);
 
-void printOperation(char operation);
+void printOperation(uint64_t setA, uint64_t setB, char operation);
 
 #endif // UTILS_H
