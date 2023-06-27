@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <assert.h>
-#include "set_64.h"
+#include "../src/set_64.h"
 
 
 int totalTests = 0;
