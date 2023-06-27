@@ -39,12 +39,27 @@ void test_isEmpty() {
 
 
 int main() {
-    uint64_t setA = 251;
-    uint64_t setB = 217;
-    printf("\nresult -> %d\n", isSubset(setA, setB));
-    // printf("\nDifference is %ld", Difference(setA, setB));
-    // printf("")
-    printf("\n251 - 217 = %ld\n", Difference(setA, setB));
+
+    runTest(test_isEmpty, "Test isEmpty");
+
+
+    // uint64_t setA = 251;
+    // uint64_t setB = 217;
+    // printf("\nresult -> %d\n", isSubset(setA, setB));
+    // // printf("\nDifference is %ld", Difference(setA, setB));
+    // // printf("")
+    // printf("\n251 - 217 = %ld\n", Difference(setA, setB));
+
+    // Run the test functions
+    
+    // runTest(test_function2, "Test function2");
+
+    // Print test results
+    printf("\n--- Test Results ---\n");
+    printf("Total tests: %d\n", totalTests);
+    printf("Tests passed: %d\n", testsPassed);
+    printf("Tests failed: %d\n", testsFailed);
+
 
 
     // for (uint8_t i = 0; i < 64; ++i) {
