@@ -21,22 +21,22 @@ void test_isEmpty() {
     // Test case 1
     uint64_t setNotEmpty = 251;
     result = isEmpty(setNotEmpty);
-    assert(result == 0);
+    assert(result == 0 && "251 != 0 -> Test case 1");
 
     // Test case 2
     uint64_t setFull = ~0UL;
     result = isEmpty(setNotEmpty);
-    assert(result == 0);
+    assert(result == 0 && "~0UL != 0 -> Test case 2");
 
     // Test case 3
-    uint64_t setEmpty = 0UL;
-    result = isEmpty(setNotEmpty);
-    assert(result == 1);
-
-    // Test case 4
     uint64_t setWithOneElement = 1UL;
     result = isEmpty(setWithOneElement);
-    assert(result == 1);
+    assert(result == 0 && "1UL != 0 -> Test case 3");
+
+    // Test case 4
+    uint64_t setEmpty = 0UL;
+    result = isEmpty(setEmpty);
+    assert(result == 1 && "0UL == 0 -> Test case 4");
 }
 
 
