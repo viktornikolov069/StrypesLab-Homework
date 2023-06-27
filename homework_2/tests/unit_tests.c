@@ -17,26 +17,34 @@ void runTest(void (*testFunc)(), const char* testName) {
 // Test function for isEmpty
 void test_isEmpty() {
     char result = 0;
+    bool passed = false;
     
     // Test case 1
     uint64_t setNotEmpty = 251;
     result = isEmpty(setNotEmpty);
     assert(result == 0 && "251 != 0 -> Test case 1");
+    puts("Test case 1 PASSED");
 
     // Test case 2
     uint64_t setFull = ~0UL;
     result = isEmpty(setNotEmpty);
     assert(result == 0 && "~0UL != 0 -> Test case 2");
+    puts("Test case 2 PASSED");
 
     // Test case 3
     uint64_t setWithOneElement = 1UL;
     result = isEmpty(setWithOneElement);
     assert(result == 0 && "1UL != 0 -> Test case 3");
+    puts("Test case 3 PASSED");
 
     // Test case 4
     uint64_t setEmpty = 0UL;
     result = isEmpty(setEmpty);
     assert(result == 1 && "0UL == 0 -> Test case 4");
+    puts("Test case 4 PASSED");
+    
+    passed = true;
+    testsPassed++;
 }
 
 // Test function for Add
@@ -53,7 +61,6 @@ void test_add() {
     
 
     // Test case 4
-    
 }
 
 // Test function for Remove
@@ -170,7 +177,8 @@ void test_numElements() {
 
 int main() {
 
-    runTest(test_isEmpty, "Test isEmpty");
+    runTest(test_isEmpty, "isEmpty");
+    runTest(test_add, "Add");
 
 
     // uint64_t setA = 251;
