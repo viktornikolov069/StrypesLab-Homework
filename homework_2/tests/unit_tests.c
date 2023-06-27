@@ -39,6 +39,134 @@ void test_isEmpty() {
     assert(result == 1 && "0UL == 0 -> Test case 4");
 }
 
+// Test function for Add
+void test_add() {
+    char result = 0;
+    
+    // Test case 1
+    
+
+    // Test case 2
+    
+
+    // Test case 3
+    
+
+    // Test case 4
+    
+}
+
+// Test function for Remove
+void test_remove() {
+    char result = 0;
+    
+    // Test case 1
+    
+
+    // Test case 2
+    
+
+    // Test case 3
+    
+
+    // Test case 4
+}
+
+// Test function for isFull
+void test_isFull() {
+    char result = 0;
+    
+    // Test case 1
+    
+
+    // Test case 2
+    
+
+    // Test case 3
+    
+
+    // Test case 4
+}
+
+// Test function for isSubset
+void test_isSubset() {
+    char result = 0;
+    
+    // Test case 1
+    
+
+    // Test case 2
+    
+
+    // Test case 3
+    
+
+    // Test case 4
+}
+
+// Test function for Union
+void test_union() {
+    char result = 0;
+    
+    // Test case 1
+    
+
+    // Test case 2
+    
+
+    // Test case 3
+    
+
+    // Test case 4
+}
+
+// Test function for Intersect
+void test_intersect() {
+    char result = 0;
+    
+    // Test case 1
+    
+
+    // Test case 2
+    
+
+    // Test case 3
+    
+
+    // Test case 4
+}
+
+// Test function for Difference
+void test_difference() {
+    char result = 0;
+    
+    // Test case 1
+    
+
+    // Test case 2
+    
+
+    // Test case 3
+    
+
+    // Test case 4
+}
+
+// Test function for numElements
+void test_numElements() {
+    char result = 0;
+    
+    // Test case 1
+    
+
+    // Test case 2
+    
+
+    // Test case 3
+    
+
+    // Test case 4
+}
 
 int main() {
 
