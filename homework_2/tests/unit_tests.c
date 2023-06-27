@@ -14,6 +14,30 @@ void runTest(void (*testFunc)(), const char* testName) {
     (*testFunc)();
 }
 
+// Test function for isEmpty
+void test_isEmpty() {
+    // Test case 1
+    uint64_t setNotEmpty = 251;
+    char result = isEmpty(setNotEmpty);
+    assert(result == 0);
+
+    // Test case 2
+    uint64_t setFull = ~0UL;
+    char result = isEmpty(setNotEmpty);
+    assert(result == 0);
+
+    // Test case 3
+    uint64_t setEmpty = 0UL;
+    char result = isEmpty(setNotEmpty);
+    assert(result == 1);
+
+    // Test case 4
+    uint64_t setWithOneElement = 1UL;
+    char result = isEmpty(setWithOneElement);
+    assert(result == 1);
+}
+
+
 int main() {
     uint64_t setA = 251;
     uint64_t setB = 217;
