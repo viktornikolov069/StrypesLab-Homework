@@ -41,7 +41,7 @@ void test_isEmpty() {
     uint64_t setEmpty = 0UL;
     result = isEmpty(setEmpty);
     assert(result == 1 && "0UL == 0 -> Test case 4");
-    puts("Test case 4 PASSED");
+    puts("Test case 4 PASSED\n");
     
     passed = true;
     testsPassed++;
@@ -49,34 +49,64 @@ void test_isEmpty() {
 
 // Test function for Add
 void test_add() {
-    char result = 0;
-    
+    uint64_t result = 0;
+
     // Test case 1
-    
+    uint64_t set1 = 0UL;
+    result = Add(set1, 0);
+    assert(result == 1UL && "Add failed - Test case 1");
+    puts("Test case 1 PASSED\n");
 
     // Test case 2
-    
+    uint64_t set2 = 1UL;
+    result = Add(set2, 0);
+    assert(result == 1UL && "Add failed - Test case 2");
+    puts("Test case 2 PASSED\n");
 
     // Test case 3
-    
+    uint64_t set3 = 5UL;
+    result = Add(set3, 2);
+    assert(result == 5UL && "Add failed - Test case 3");
+    puts("Test case 3 PASSED\n");
 
     // Test case 4
+    uint64_t set4 = 10UL;
+    result = Add(set4, 3);
+    assert(result == 10UL && "Add failed - Test case 4");
+    puts("Test case 4 PASSED\n");
+
+    testsPassed++;
 }
 
 // Test function for Remove
 void test_remove() {
-    char result = 0;
-    
+    uint64_t result = 0;
+
     // Test case 1
-    
+    uint64_t set1 = 1UL;
+    result = Remove(set1, 0);
+    assert(result == 0UL && "Remove failed - Test case 1");
+    puts("\nTest case 1 PASSED");
 
     // Test case 2
-    
+    uint64_t set2 = 5UL;
+    result = Remove(set2, 2);
+    assert(result == 1UL && "Remove failed - Test case 2");
+    puts("\nTest case 2 PASSED");
 
     // Test case 3
-    
+    uint64_t set3 = 10UL;
+    result = Remove(set3, 3);
+    assert(result == 2UL && "Remove failed - Test case 3");
+    puts("\nTest case 3 PASSED");
 
     // Test case 4
+    uint64_t set4 = 15UL;
+    result = Remove(set4, 0);
+    assert(result == 14UL && "Remove failed - Test case 4");
+    puts("\nTest case 4 PASSED\n");
+
+    testsPassed++;
 }
 
 // Test function for isFull
@@ -179,6 +209,7 @@ int main() {
 
     runTest(test_isEmpty, "isEmpty");
     runTest(test_add, "Add");
+    runTest(test_remove, "Remove");
 
 
     // uint64_t setA = 251;

@@ -5,7 +5,7 @@
 #include "utils.h"
 
 
-/**
+/**     
  * Checks if the set is empty using double not.
  *
  * @param set The set that we do operations on. Expected values are in the range [0, 2^64-1].
@@ -34,8 +34,9 @@ uint64_t Add(uint64_t set, char index) {
     uint64_t result = Intersect(set, 1UL << index) ? set : Union(set, 1UL << index);
     if (!Intersect(result, ~set)) {
         printf("Element is present in set and it can't be added\n");
+    } else {
+        printOperation(set, 1UL << index, '|', "Add");
     }
-    printBits(result);
     return result;
 }
 
@@ -56,9 +57,10 @@ uint64_t Remove(uint64_t set, char index) {
     uint64_t result = !!(Intersect(set, 1UL << index)) ? Difference(set, 1UL << index) : set;
     if (!!Intersect(result, ~set)) {
         printf("\nElement is not present in set and there fore it can't be removed\n");
+    } else {
+        printOperation(set, 1UL << index, '^', "Difference");
     }
-    printf("result -> ");
-    printBits(result);
+    
     return result;
 }
 
@@ -137,7 +139,6 @@ uint64_t Intersect(uint64_t setA, uint64_t setB) {
  * @return Returns a new set which has elements not part of either setA or setB.
  */
 uint64_t Difference(uint64_t setA, uint64_t setB) {
-    printOperation(setA, setB, '^', "Difference");
     return (uint64_t)(setA ^ setB);
 }
 
