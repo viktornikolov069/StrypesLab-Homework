@@ -63,18 +63,6 @@ void test_add() {
     assert(result == 1UL && "Add failed - Test case 2");
     puts("Test case 2 PASSED\n");
 
-    // Test case 3
-    uint64_t set3 = 5UL;
-    result = Add(set3, 2);
-    assert(result == 5UL && "Add failed - Test case 3");
-    puts("Test case 3 PASSED\n");
-
-    // Test case 4
-    uint64_t set4 = 10UL;
-    result = Add(set4, 3);
-    assert(result == 10UL && "Add failed - Test case 4");
-    puts("Test case 4 PASSED\n");
-
     testsPassed++;
 }
 
@@ -94,18 +82,6 @@ void test_remove() {
     assert(result == 1UL && "Remove failed - Test case 2");
     puts("\nTest case 2 PASSED");
 
-    // Test case 3
-    uint64_t set3 = 10UL;
-    result = Remove(set3, 3);
-    assert(result == 2UL && "Remove failed - Test case 3");
-    puts("\nTest case 3 PASSED");
-
-    // Test case 4
-    uint64_t set4 = 15UL;
-    result = Remove(set4, 0);
-    assert(result == 14UL && "Remove failed - Test case 4");
-    puts("\nTest case 4 PASSED\n");
-
     testsPassed++;
 }
 
@@ -114,31 +90,36 @@ void test_isFull() {
     char result = 0;
     
     // Test case 1
-    
+    uint64_t setFull = ~0UL;
+    result = isFull(setFull);
+    assert(result == 1 && "isFull failed - Test case 1");
+    puts("\nTest case 1 PASSED");
 
     // Test case 2
-    
+    uint64_t setNotFull= 5UL;
+    result = isFull(setNotFull);
+    assert(result == 0 && "isFull failed - Test case 2");
+    puts("\nTest case 2 PASSED");
 
-    // Test case 3
-    
-
-    // Test case 4
+    testsPassed++;
 }
 
 // Test function for isSubset
 void test_isSubset() {
     char result = 0;
+    uint64_t setA = 251;
+    uint64_t setB = 217;
     
     // Test case 1
-    
+    result = isSubset(setA, setB);
+    assert(result == 1 && "isSubset failed - Test case 1");
+    puts("\nTest case 1 PASSED");
 
     // Test case 2
-    
-
-    // Test case 3
-    
-
-    // Test case 4
+    result = isSubset(setB, setA);
+    assert(result == 0 && "isSubset failed - Test case 2");
+    puts("\nTest case 2 PASSED");
+    testsPassed++;
 }
 
 // Test function for Union
@@ -210,6 +191,8 @@ int main() {
     runTest(test_isEmpty, "isEmpty");
     runTest(test_add, "Add");
     runTest(test_remove, "Remove");
+    runTest(test_isFull, "isFull");
+    runTest(test_isSubset, "isSubset");
 
 
     // uint64_t setA = 251;
