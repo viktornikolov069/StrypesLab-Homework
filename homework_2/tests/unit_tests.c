@@ -55,7 +55,7 @@ void test_add() {
     uint64_t set1 = 0UL;
     result = Add(set1, 0);
     assert(result == 1UL && "Add failed - Test case 1");
-    puts("Test case 1 PASSED\n");
+    puts("Test case 1 PASSED");
 
     // Test case 2
     uint64_t set2 = 1UL;
@@ -124,50 +124,45 @@ void test_isSubset() {
 
 // Test function for Union
 void test_union() {
-    char result = 0;
+    uint64_t result = 0;
+    
+    uint64_t setA = 251;
+    uint64_t setB = 217;
     
     // Test case 1
-    
+    result = Union(setA, setB);
+    assert(result == 251 && "Union failed - Test case 1");
+    puts("\nTest case 1 PASSED");
+    testsPassed++;
 
-    // Test case 2
-    
-
-    // Test case 3
-    
-
-    // Test case 4
 }
 
 // Test function for Intersect
 void test_intersect() {
-    char result = 0;
+    uint64_t result = 0;
+    
+    uint64_t setA = 251;
+    uint64_t setB = 217;
     
     // Test case 1
-    
-
-    // Test case 2
-    
-
-    // Test case 3
-    
-
-    // Test case 4
+    result = Intersect(setA, setB);
+    assert(result == 217 && "Intersect failed - Test case 1");
+    puts("\nTest case 1 PASSED");
+    testsPassed++;
 }
 
 // Test function for Difference
 void test_difference() {
-    char result = 0;
+    uint64_t result = 0;
+    
+    uint64_t setA = 251;
+    uint64_t setB = 217;
     
     // Test case 1
-    
-
-    // Test case 2
-    
-
-    // Test case 3
-    
-
-    // Test case 4
+    result = Difference(setA, setB);
+    assert(result == 34 && "Difference failed - Test case 1");
+    puts("\nTest case 1 PASSED");
+    testsPassed++;
 }
 
 // Test function for numElements
@@ -175,15 +170,24 @@ void test_numElements() {
     char result = 0;
     
     // Test case 1
-    
+    uint64_t oneElement = 1;
+    result = numElements(oneElement);
+    assert(result == 1 && "numElements failed - Test case 1");
+    puts("\nTest case 1 PASSED");
 
     // Test case 2
-    
+    uint64_t zeroElements = 0;
+    result = numElements(zeroElements);
+    assert(result == 0 && "numElements failed - Test case 2");
+    puts("\nTest case 2 PASSED");
 
     // Test case 3
-    
+    uint64_t manyElements = 251;
+    result = numElements(manyElements);
+    assert(result == 7 && "numElements failed - Test case 3");
+    puts("\nTest case 3 PASSED");
 
-    // Test case 4
+    testsPassed++;
 }
 
 int main() {
@@ -193,29 +197,13 @@ int main() {
     runTest(test_remove, "Remove");
     runTest(test_isFull, "isFull");
     runTest(test_isSubset, "isSubset");
+    runTest(test_union, "Union");
+    runTest(test_intersect, "Intersect");
+    runTest(test_difference, "Difference");
+    runTest(test_numElements, "numElements");
 
-
-    // uint64_t setA = 251;
-    // uint64_t setB = 217;
-    // printf("\nresult -> %d\n", isSubset(setA, setB));
-    // // printf("\nDifference is %ld", Difference(setA, setB));
-    // // printf("")
-    // printf("\n251 - 217 = %ld\n", Difference(setA, setB));
-
-    // Run the test functions
-    
-    // runTest(test_function2, "Test function2");
-
-    // Print test results
     printf("\n--- Test Results ---\n");
     printf("Total tests: %d\n", totalTests);
     printf("Tests passed: %d\n", testsPassed);
     printf("Tests failed: %d\n", testsFailed);
-
-
-
-    // for (uint8_t i = 0; i < 64; ++i) {
-
-    // }
-    
 } 
