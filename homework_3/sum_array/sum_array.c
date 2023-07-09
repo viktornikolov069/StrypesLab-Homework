@@ -36,10 +36,6 @@ int main() {
 
     sumArrayDigits(arr, 4);
 
-// 22 
-
-// /1 + 2 + 3 + 4 + 5 + 7 + 0/
-
 
     return 0;
 }
