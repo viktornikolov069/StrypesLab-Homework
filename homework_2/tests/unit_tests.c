@@ -5,7 +5,7 @@
 
 int totalTests = 0;
 int testsPassed = 0;
-int testsFailed = 0;
+int testsFailed = 0;  
 
 void runTest(void (*testFunc)(), const char* testName) {
     totalTests++;

@@ -24,6 +24,8 @@ unsigned sumArrayDigits(const int* arr, size_t n) {
 }
 
 
+
+
 // EXAMPLE INPUT: 3 4 5 EOF
 
 // TIP: Don't forget to link the math library explicitly
@@ -33,6 +35,7 @@ int main() {
     int arr[] = {1, 11, 1111, 11111 };
 
     sumArrayDigits(arr, 4);
+
 
     return 0;
 }
