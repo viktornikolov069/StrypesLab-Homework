@@ -19,7 +19,6 @@ int main() {
         randAuthor(books[i].author);
         books[i].pages = randInt(10, 1000);
         books[i].price = randReal(2.00, 100.00);
-       // printf("%s\n", randSymbol(false));
     }
 
     int option;
@@ -43,7 +42,4 @@ int main() {
     printf("Size of Book structure = %ld bytes\n", sizeof(books[0]));
 
     return 0;
-
- //check if the numbers are digits 
-
 }

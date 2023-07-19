@@ -7,8 +7,6 @@
 
 #include "../include/books.h"
 
-#define TITLE_COUNT 101
-#define AUTHOR_COUNT 101
 #define EPS 0.001
 
 int compareTitleAscending(const void* value1, const void* value2) {
