@@ -1,0 +1,31 @@
+Stages of Compilation
+
+main.c ---> Preprocessor -> (main.i) ---> Compile -> (main.s) ---> Assembly -> (main.o) ---> Linker 
+
+"Static Libs" ---> Linker -> a.out ---> Loader
+
+"Dynamic Libs" ---> Loader ---> Process
+
+========================================================
+
+Explanation
+
+0. The Loader isn't part of the compilation process but I have included for better clarity.
+
+1. The "main.c" file goes through the Preprocessor. The Preprocessor handles preprocessor directives,
+   includes the content of header files into source files, expands macros etc. 
+
+2. The code is compiled or translated to intermediate assembly code specific to the target platform.
+
+3. The assembler converts the assembly code in to an object file which contains machine readable code.
+
+4. The Linker links source and object files together.
+
+5. The Loader includes dynamic libraries and moves our program from HDD to RAM starting a process.
+
+========================================================
+
+Difference between static and dynamic Libs
+
+1. Static libs are copied or linked in each program at compile time. 
+2. Shared libs can be shared between multiple processes at runtime.
