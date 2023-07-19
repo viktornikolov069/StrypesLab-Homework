@@ -29,3 +29,9 @@ Difference between static and dynamic Libs
 
 1. Static libs are copied or linked in each program at compile time. 
 2. Shared libs can be shared between multiple processes at runtime.
+
+========================================================
+
+Padding of Book
+
+101 bytes + 101 bytes + 2 bytes + 6 bytes(padding) + 8 bytes = 216 bytes
