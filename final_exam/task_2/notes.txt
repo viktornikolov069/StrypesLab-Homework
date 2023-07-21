@@ -34,4 +34,4 @@ Difference between static and dynamic Libs
 
 Padding of Book
 
-101 bytes + 101 bytes + 2 bytes + 6 bytes(padding) + 8 bytes = 216 bytes
+101 bytes + 101 bytes + 2 bytes + 4 bytes(padding) + 8 bytes = 216 bytes
